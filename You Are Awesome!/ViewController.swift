@@ -9,25 +9,21 @@
 import UIKit
 
 class ViewController: UIViewController {
-
     @IBOutlet weak var messageLabel: UILabel!
     
     //Code below executes when the app's view first loads
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     
-
     @IBAction func showMessagePressed(_ sender: UIButton) {
-        messageLabel.text = "You are Awesome!"
-        messageLabel.textColor = UIColor.red
-    }
-    
-    
-    @IBAction func showAnotherMessagePressed(_ sender: UIButton) {
-        messageLabel.text = "You are Great!"
-        messageLabel.textColor = UIColor.blue
+        if messageLabel.text == "You are Awesome!" {
+            messageLabel.text = "You are Great!"
+        } else if messageLabel.text == "You are Great!" {
+            messageLabel.text = "You are Amazing!"
+        } else{
+            messageLabel.text = "You are Awesome!"
+        }
     }
 }
 
